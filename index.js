@@ -112,21 +112,22 @@ const toggleColor = function () {
   const mainTitle = document.querySelector("h1");
   mainTitle.classList.toggle("red-and-bold");
 };
-toggleColor();
+toggleColor(); // prova a chiamarla dalla console del browser più volte
 
-onlySecondArticle.className = "new-class";
+onlySecondArticle.className = "new-class"; // metodo valido solo se l'elemento non aveva classi in precedenza
 
 // onlySecondArticle.className = "another-class"; // NON AGGUNGETE classi succesive ad una prima in questo modo
 onlySecondArticle.classList.add("another-class"); // preferite un metodo non distruttivo che aggiunge in maniera coerente una class IN PIU'
 
 const hideElem = function () {
-  const elementToRemove = document.getElementById("element-to-remove");
+  // saremo qui solo quando la funzione verrà eseguita
+  const elementToRemove = document.getElementById("element-to-remove"); // seleziono l'elemento che voglio modificare
   console.log(elementToRemove);
 
-  elementToRemove.classList.toggle("hidden");
+  elementToRemove.classList.toggle("hidden"); // se "hidden" è già presente nella pagina il .toggle() lo rimuove se no lo aggiunge
 };
 
-// hideElem();
+// hideElem(); // invece che chiamarlo noi l'abbiamo assegnato all'onclick del changeImgBtn più in basso
 
 // CREAZIONE DI NUOVI ELEMENTI
 const addNewArticle = function () {
@@ -147,7 +148,7 @@ const addNewArticle = function () {
 
 // L'evento on-click: serve a far scaturire un effetto in un momento preciso nel tempo.
 // Quando un preciso elemento riceve il click dall'utente
-// colleghiamo una funzione che si occuperà di esegure le operazioni da noi specificate in anticipo
+// colleghiamo una funzione che si occuperà di esegure le operazioni da noi specificate in precedenza
 
 // Seleziono il bottone dalla pagina
 // e gli aggancio successivamente l'azione da compiere al "click"
@@ -162,14 +163,16 @@ const changeImage = function () {
     "https://images.unsplash.com/photo-1689020562921-ba28a34c881d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1208&q=80"
   );
 
-  // equivalente al metodo setAttribute
-  // img.src= "https://images.unsplash.com/photo-1689020562921-ba28a34c881d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1208&q=80"
+  // equivalente al metodo .setAttribute()
+  // img.src = "https://images.unsplash.com/photo-1689020562921-ba28a34c881d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1208&q=80"
+
+  // il cambio immagine avverrà solo quando questa funzione sarà avviata/eseguita
 };
 
 // secondo bottone che cambia la src dell'immagine al click,
 // la funzionalità è dichiarata all'interno della funzione changeImage
 const changeImgBtn = document.getElementById("change-image");
-changeImgBtn.onclick = changeImage;
+changeImgBtn.onclick = changeImage; // fino a che il bottone non viene premuto l'immagine non cambierà
 
 // questa funzione selezionerà l'h1 e gli cambierà lo stile e rimuoverà
 // l'ultima lettera del suo testo, ogni volta che verrà cliccata
